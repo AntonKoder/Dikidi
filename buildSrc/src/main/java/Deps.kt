@@ -3,10 +3,7 @@ private const val hiltVersion = "2.44"
 private const val lifecycleVersion = "2.5.1"
 private const val navVersion = "2.5.3"
 private const val rxVersion = "3.0.0"
-//private const val glideVersion = "4.12.0"
-//private const val exoPlayerVersion = "2.13.2"
 private const val retrofitVersion = "2.9.0"
-//private const val roomVersion = "2.2.6"
 
 object Deps {
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
@@ -14,12 +11,7 @@ object Deps {
     const val appCompat = "androidx.appcompat:appcompat:1.3.1"
     const val material = "com.google.android.material:material:1.3.0"
     const val constraint = "androidx.constraintlayout:constraintlayout:2.0.4"
-//    const val recyclerView = "androidx.recyclerview:recyclerview:1.1.0"
-//    const val viewPager2 = "androidx.viewpager2:viewpager2:1.0.0"
-//    const val activityKtx = "androidx.activity:activity-ktx:1.6.0"
     const val fragmentKtx = "androidx.fragment:fragment-ktx:1.5.4"
-
-//    const val gmsLocation = "com.google.android.gms:play-services-location:18.0.0"
 
     const val hilt = "com.google.dagger:hilt-android:$hiltVersion"
     const val hiltCompiler = "com.google.dagger:hilt-compiler:$hiltVersion"
@@ -38,32 +30,6 @@ object Deps {
     const val retrofitRxAdapter = "com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0"
     const val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     const val okHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:4.9.0"
-
-//    const val room = "androidx.room:room-runtime:$roomVersion"
-//    const val roomCompiler = "androidx.room:room-compiler:$roomVersion"
-
-//    const val localeChanger = "com.github.franmontiel:LocaleChanger:1.1"
-
-//    const val viewPager2Indicator = "me.relex:circleindicator:2.1.6"
-
-//    const val shimmerFacebook = "com.facebook.shimmer:shimmer:0.5.0"
-
-//    const val glide = "com.github.bumptech.glide:glide:$glideVersion"
-//    const val glideProcessor = "com.github.bumptech.glide:compiler:$glideVersion"
-
-//    const val imageGallery = "com.github.MikeOrtiz:TouchImageView:1.4.1"
-//    const val swipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
-
-//    const val exoPlayerCore = "com.google.android.exoplayer:exoplayer-core:$exoPlayerVersion"
-//    const val exoPlayerHls = "com.google.android.exoplayer:exoplayer-hls:$exoPlayerVersion"
-
-//    const val customSwitch = "com.github.zcweng:switch-button:0.0.3@aar"
-
-//    const val circleImageView = "com.mikhaellopez:circularimageview:4.3.0"
-
-//    const val firebaseBom = "com.google.firebase:firebase-bom:28.4.0"
-//    const val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics-ktx"
-//    const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx"
 }
 
 object Plugins {

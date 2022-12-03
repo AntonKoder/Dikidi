@@ -3,8 +3,6 @@ apply plugin: Plugins.kotlinAndroid
 apply plugin: Plugins.kapt
 apply plugin: Plugins.safeArgs
 apply plugin: Plugins.hilt
-//apply plugin: Plugins.googleServices
-//apply plugin: Plugins.crashlytics
 
 android {
     namespace AndroidConfig.applicationId
