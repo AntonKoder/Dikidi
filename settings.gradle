@@ -1,0 +1,7 @@
+include ':app'
+include ':core-navigation'
+include ':feature-main'
+include ':lib-android-base'
+include ':core-resources'
+include ':core-network'
+include ':repository-shop'

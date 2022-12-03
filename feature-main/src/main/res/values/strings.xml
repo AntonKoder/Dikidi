@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zihuatanejo_gro">Zihuatanejo, Gro</string>
+    <string name="select_category">Select Category</string>
+    <string name="view_all">view all</string>
+    <string name="hot_sales">Hot sales</string>
+    <string name="see_more">see more</string>
+    <string name="best_seller">Best Seller</string>
+    <string name="explorer">Explorer</string>
+    <string name="new_item">New</string>
+    <string name="Iphone_12">Iphone 12</string>
+    <string name="super_mega">Súper. Mega. Rápido.</string>
+    <string name="buy_now">Buy now!</string>
+    <string name="main_page">Главная</string>
+    <string name="catalogue">Каталог</string>
+    <string name="promotions">Акции</string>
+    <string name="my_notes">Мои записи</string>
+    <string name="more">Еще</string>
+    <string name="category_header">Категории</string>
+    <string name="premium">Премиум</string>
+    <string name="note_me">Записаться</string>
+</resources>

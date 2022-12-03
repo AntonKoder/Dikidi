@@ -1,0 +1,66 @@
+apply plugin: Plugins.androidLib
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kapt
+apply plugin: Plugins.hilt
+
+
+android {
+    namespace AndroidConfig.mainNameSpace
+    compileSdkVersion AndroidConfig.compileSdk
+    buildToolsVersion AndroidConfig.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion AndroidConfig.minSdk
+        targetSdkVersion AndroidConfig.targetSdk
+        versionCode AndroidConfig.versionCode
+        versionName AndroidConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(Modules.libAndroidBase)
+    implementation project(Modules.coreResources)
+    implementation project(Modules.coreNavigation)
+    implementation project(Modules.repositoryShop)
+    implementation project(Modules.coreNetwork)
+
+    implementation Deps.kotlin
+    implementation Deps.coreKtx
+    implementation Deps.appCompat
+    implementation Deps.material
+    implementation Deps.viewModel
+    implementation Deps.liveData
+    implementation Deps.fragmentKtx
+
+    implementation Deps.rxJava
+    implementation Deps.rxAndroid
+
+    implementation Deps.hilt
+    kapt Deps.hiltCompiler
+
+    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.2'
+
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    kapt 'com.github.bumptech.glide:compiler:4.13.0'
+}

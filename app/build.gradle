@@ -1,0 +1,62 @@
+apply plugin: Plugins.androidApp
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kapt
+apply plugin: Plugins.safeArgs
+apply plugin: Plugins.hilt
+//apply plugin: Plugins.googleServices
+//apply plugin: Plugins.crashlytics
+
+android {
+    namespace AndroidConfig.applicationId
+    compileSdkVersion AndroidConfig.compileSdk
+    buildToolsVersion AndroidConfig.buildToolsVersion
+
+    defaultConfig {
+        applicationId AndroidConfig.applicationId
+        minSdkVersion AndroidConfig.minSdk
+        targetSdkVersion AndroidConfig.targetSdk
+        versionCode AndroidConfig.versionCode
+        versionName AndroidConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    // Project modules
+    implementation project(Modules.coreNavigation)
+    implementation project(Modules.coreResources)
+    implementation project(Modules.libAndroidBase)
+
+    implementation project(Modules.featureMain)
+
+    implementation Deps.kotlin
+    implementation Deps.coreKtx
+    implementation Deps.appCompat
+    implementation Deps.material
+    implementation Deps.constraint
+    implementation Deps.navigationFragment
+    implementation Deps.navigationUi
+
+    implementation Deps.hilt
+    kapt Deps.hiltCompiler
+}

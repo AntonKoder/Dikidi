@@ -1,0 +1,46 @@
+apply plugin: Plugins.androidLib
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kapt
+apply plugin: Plugins.hilt
+
+android {
+    namespace 'com.a4nt0n64r.repository_shop'
+    compileSdkVersion AndroidConfig.compileSdk
+    buildToolsVersion AndroidConfig.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion AndroidConfig.minSdk
+        targetSdkVersion AndroidConfig.targetSdk
+        versionCode AndroidConfig.versionCode
+        versionName AndroidConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation project(Modules.coreNetwork)
+    implementation project(Modules.libAndroidBase)
+
+    implementation Deps.kotlin
+    implementation Deps.rxJava
+
+    implementation Deps.hilt
+    kapt Deps.hiltCompiler
+}

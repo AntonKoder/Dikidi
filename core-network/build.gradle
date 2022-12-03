@@ -1,0 +1,63 @@
+apply plugin: Plugins.androidLib
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kapt
+apply plugin: Plugins.hilt
+
+android {
+    namespace 'com.a4nt0n64r.core_network'
+    compileSdkVersion AndroidConfig.compileSdk
+    buildToolsVersion AndroidConfig.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion AndroidConfig.minSdk
+        targetSdkVersion AndroidConfig.targetSdk
+        versionCode AndroidConfig.versionCode
+        versionName AndroidConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+
+        debug {
+            buildConfigField "String", "API_BASE_URL", "\"https://api-beauty.test.dikidi.ru/\""
+            buildConfigField "String", "API_KEY", "\"maJ9RyT4TJLt7bmvYXU7M3h4F797fUKofUf3373foN94q4peAM\""
+        }
+        release {
+            buildConfigField "String", "API_BASE_URL", "\"https://api-beauty.test.dikidi.ru/\""
+            buildConfigField "String", "API_KEY", "\"maJ9RyT4TJLt7bmvYXU7M3h4F797fUKofUf3373foN94q4peAM\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation project(Modules.libAndroidBase)
+    implementation project(Modules.coreResources)
+
+    implementation Deps.kotlin
+    implementation Deps.rxAndroid
+    implementation Deps.rxJava
+
+    implementation Deps.retrofitRxAdapter
+    implementation Deps.retrofit
+    implementation Deps.okHttpLoggingInterceptor
+    api Deps.retrofitGsonConverter
+
+    implementation Deps.hilt
+    kapt Deps.hiltCompiler
+}
